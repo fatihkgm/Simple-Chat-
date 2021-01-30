@@ -33,7 +33,7 @@
 
       socket.on("show-typing",(status)=>{
          var typingStatus=document.getElementById("typing-status")
-         typingStatus.innerHTML=""
+         typingStatus.innerHTML="Typing status"
          if (data.status == true){
 
             typingStatus.innerHTML=`${data.name} Someone typing...`
@@ -58,5 +58,5 @@
          Let me chat!
       </button>
    </body>
-   <h3 id="typing-status"></h3>
+   <h3 id="typing-status">Typing status</h3>
 </html>

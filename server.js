@@ -21,7 +21,7 @@ io.on('connection', function(socket) {
    });
 
    socket.on("typing" ,(status)=> {
-      socket.emit("show-typing" , {name: "fatih" , status})
+      socket.broadcast.emit("show-typing" , {name: "fatih" , status})
    })
    
    socket.on('msg', function(data) {
