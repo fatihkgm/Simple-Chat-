@@ -19,6 +19,10 @@ io.on('connection', function(socket) {
          socket.emit('userSet', {username: data});
       }
    });
+
+   socket.on("typing" ,(status)=> {
+      socket.emit("show-typing" , {name: "fatih" , status})
+   })
    
    socket.on('msg', function(data) {
       //Send message to everyone
