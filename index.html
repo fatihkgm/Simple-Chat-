@@ -26,6 +26,22 @@
             socket.emit('msg', {message: msg, user: user});
          }
       }
+
+      function tYp(status){
+         socket.emit("typing",status)
+      }
+
+      socket.on("show-typing",(status)=>{
+         var typingStatus=document.getElementById("typing-status")
+         typingStatus.innerHTML=""
+         if (data.status == true){
+
+            typingStatus.innerHTML=`${data.name} Someone typing...`
+
+         }
+      })
+
+
       socket.on('newmsg', function(data) {
          if(user) {
             document.getElementById('message-container').innerHTML += '<div><b>' + 
@@ -42,4 +58,5 @@
          Let me chat!
       </button>
    </body>
+   <h3 id="typing-status"></h3>
 </html>
